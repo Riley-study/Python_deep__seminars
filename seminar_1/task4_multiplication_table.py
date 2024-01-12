@@ -7,15 +7,17 @@ for i in range(2, 10, 4):
         print()
     print()
 
-# FORMAT = 15
 
+#  Второй вариант решения на семинаре
+# FORMAT = 15
+#
 # def print_mult(n, m):
 #     for i in range(2, 11):
 #         st = ''
 #         for j in range(n, m + 1):
 #             st0 = f'{j} X {i} = {j * i}'
 #             st += st0 + ' ' * (FORMAT - len(st0))
-#             print(st)
+#         print(st)
 #
 #
 # print_mult(2, 5)
