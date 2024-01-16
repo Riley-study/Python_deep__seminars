@@ -9,3 +9,8 @@ x2 = (-b - d ** 0.5) / (2 * a)
 
 print(x1)
 print(x2)
+
+sum_out = 10000
+pr = min(max(sum_out*0.015, 30), 600)
+# pr = max(min(sum_out*0.015, 600), 30)
+print(pr)
