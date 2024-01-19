@@ -16,5 +16,19 @@ for thing in friends.values():
     all_things.extend(thing)
 
 uniq_things = set(all_things)
-print(all_things)
-print(uniq_things)
+print(all_things) # список всех-всех вещей
+print(uniq_things) # список вещей без повторений у всех
+
+# составить словарь вещь: количество, те вещи, которые встречаются по одному разу ищем в изначальном словаре
+# и выводим имя владельца
+
+dict_super_unic = {}
+for thing in all_things:
+    dict_super_unic[thing] = dict_super_unic.get(thing, 0) + 1
+print(dict_super_unic)
+
+for thing in dict_super_unic:
+    if dict_super_unic[thing] == 1:
+        print(thing)
+# те вещи, количество которые содержится по (кол-во друзей - 1) есть у всех кроме одного, по ключу названия вещи
+# выводим того, у кого ее нет
