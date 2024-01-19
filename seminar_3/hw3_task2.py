@@ -9,7 +9,7 @@
 # На выходе:
 # [('hello', 3), ('world', 1), ('python', 1), ('again', 1)]
 
-text = "Python 3.9 is the latest version of Python. It's awesome!"
+text = "The quick brown fox jumps over the lazy dog. Lazy dog, lazy fox!"
 formated_text = text.lower().replace(".", "").replace(",", "").replace("'", " ").replace("!", "")
 words = formated_text.split()
 words_without_num = []
@@ -25,10 +25,12 @@ list_res = []
 for word in words_without_num:
     dict_res[word] = dict_res.get(word, 0) + 1
 
+
 for item in dict_res.items():
     list_res.append(tuple(item))
 
 
+list_res.sort(key=lambda x: x[1], reverse=True)
 print(list_res)
 
 # осталась сортировка по убыванию
