@@ -5,11 +5,10 @@ text_init = 'список с уникальными кодами'
 
 
 def generate_unicode_list(text: str) -> list[int]:
-    res = []
+    res = set()
     for char in text:
-        res.append(ord(char))
-
-    return res
+        res.add(ord(char))
+    return sorted(list(res), reverse=True)
 
 
 print(generate_unicode_list(text_init))
