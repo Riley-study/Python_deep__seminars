@@ -42,7 +42,7 @@ def _is_leap_year(year) -> bool:
 
 
 if __name__ == '__main__':
-    # print(parse_data('28.02.2024'))
-    # print(parse_data('29.02.2023'))
-    # print(parse_data('31.04.2000'))
+    print(parse_data('28.02.2024'))
+    print(parse_data('29.02.2023'))
+    print(parse_data('31.04.2000'))
     print(parse_data('32.12.1988'))
