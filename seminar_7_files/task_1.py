@@ -33,4 +33,5 @@ def pseudo_names(count_str: int, file_name: str) -> None:
         file.writelines([name_gen() + '\n' for _ in range(count_str + 1)])
 
 
+
 pseudo_names(5, 'task2.txt')
