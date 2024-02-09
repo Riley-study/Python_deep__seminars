@@ -48,4 +48,4 @@ def csv_to_json(csv_in: str, json_out: str):
 
 
 if __name__ == '__main__':
-    csv_to_json_v2('data_task3.csv', 'data_task4_json')
+    csv_to_json_v2('data_task3.csv', 'data_task4.json')

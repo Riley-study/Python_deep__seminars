@@ -32,4 +32,4 @@ def enter_user(level: str, id: str, name: str, file_name: str) -> None:
 
 
 if __name__ == '__main__':
-    enter_user('5', '12345656', 'Alena4', 'data_task2.json')
+    enter_user('4', '12345658', 'Alenx', '../example/data_task2.json')
