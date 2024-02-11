@@ -10,6 +10,7 @@ rows(целое число) - количество строк (записей) �
 import csv
 import json
 from random import randint
+from typing import Callable
 
 
 def generate_csv_file(file_name: str, rows: int):
@@ -25,26 +26,32 @@ def generate_csv_file(file_name: str, rows: int):
             csv_write.writerow((a, b, c))
 
 
-def save_to_json(csv_file):
-    def deco(func):
+def save_to_json(csv_file: str) -> Callable:
+    def deco(func: Callable):
         def wrapper(json_file):
             with (open(json_file, 'w') as f_out, open(csv_file, 'r', newline='') as f_in):
                 args = []
                 csv_reader = csv.reader(f_in)
-                json_writer = json.dump(f_out)
                 for line in csv_reader:
                     dict = {}
-                    a, b, c = line[0], line[1], line[2]
-                    dict["parameters"] = [a, b, c]
-                    dict["result"] = func(a, b, c)
-                    args.append(dict)
-                return args
+                    # a, b, c = line[1], line[2],line[3]
+                    # dict["parameters"] = [a, b, c]
+                    # dict["result"] = func(a, b, c)
+                    # args.append(dict)
+                    # json_writer = json.dump(dict, f_out, indent=2)
+                    dict[line] = str(line).split(',')
+            return dict
 
         return wrapper
 
+    return deco
 
-@save_to_json
-def find_roots(a: int, b: int, c: int):
+
+@save_to_json('first.csv')
+def find_roots(a: str, b: str, c: str):
+    a = int(a)
+    b = int(b)
+    c = int(c)
     d = b ** 2 - 4 * a * c
     x1 = (-b + d ** 0.5) / (2 * a)
     x2 = (-b - d ** 0.5) / (2 * a)
@@ -58,4 +65,4 @@ def find_roots(a: int, b: int, c: int):
 
 if __name__ == '__main__':
     generate_csv_file('first.csv', 101)
-    print(find_roots(''))
+    print(find_roots('results.json'))
