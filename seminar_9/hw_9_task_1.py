@@ -34,11 +34,11 @@ def save_to_json(csv_file: str) -> Callable:
                 csv_reader = csv.reader(f_in)
                 for line in csv_reader:
                     dict = {}
-                    # a, b, c = line[1], line[2],line[3]
-                    # dict["parameters"] = [a, b, c]
-                    # dict["result"] = func(a, b, c)
-                    # args.append(dict)
-                    # json_writer = json.dump(dict, f_out, indent=2)
+                    a, b, c = line[1], line[2],line[3]
+                    dict["parameters"] = [a, b, c]
+                    dict["result"] = func(a, b, c)
+                    args.append(dict)
+                    json_writer = json.dump(dict, f_out, indent=2)
                     dict[line] = str(line).split(',')
             return dict
 
