@@ -21,7 +21,7 @@ class Rectangle:
         return Rectangle(new_length, new_width)
 
     def __sub__(self, other):
-        new_perim = self.len() - other.len()
+        new_perim = self.len() - other.perimeter()
         # print(new_perim)
         new_width = abs(self.width - other.width)
         # print(new_width)
