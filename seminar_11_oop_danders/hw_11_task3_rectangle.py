@@ -17,17 +17,12 @@ class Rectangle:
 
     def __sub__(self, other):
         new_perim = self.perimeter() - other.perimeter()
-        # print(new_perim)
         new_height = abs(self.height - other.height)
-        # print(new_width)
         new_width = new_perim / 2 - new_height
-        # print(new_length)
         if new_height > new_width:
             new_height, new_width = new_width, new_height
         # if new_height < 0:
         #     raise ValueError("Размеры вычитаемого прямоугольника превышают размеры уменьшаемого прямоугольника")
-
-
         return Rectangle(new_height, new_width)
 
     def __eq__(self, other: 'Rectangle'):
